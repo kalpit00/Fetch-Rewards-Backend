@@ -5,7 +5,8 @@ import com.kalpit00.Fetch_Rewards.dto.Request;
 import com.kalpit00.Fetch_Rewards.dto.Response;
 import com.kalpit00.Fetch_Rewards.service.ReceiptService;
 import jakarta.validation.Valid;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +15,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
-@Slf4j
 @RestController
 @RequestMapping("/receipts")
 
 public class ReceiptController {
-
+    private static final Logger log = LoggerFactory.getLogger(ReceiptController.class);
     @Autowired
     private ReceiptService receiptService;
 
