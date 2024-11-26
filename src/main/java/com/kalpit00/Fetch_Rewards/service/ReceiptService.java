@@ -25,13 +25,13 @@ public class ReceiptService {
     public String processReceipt(Request receiptRequest) {
         Receipt receipt = Receipt.builder().
                 retailer(receiptRequest.getRetailer()).
-                total(receiptRequest.getTotal()).
+                total(Double.valueOf(receiptRequest.getTotal())).
                 purchaseDate(receiptRequest.getPurchaseDate()).
                 purchaseTime(receiptRequest.getPurchaseTime()).
                 items(new ArrayList<>()).build();
         for (ItemRequest itemRequest : receiptRequest.getItems()) {
             receipt.getItems().add(Item.builder().shortDescription(itemRequest.getShortDescription()).
-                    price(itemRequest.getPrice()).build());
+                    price(Double.valueOf(itemRequest.getPrice())).build());
         }
         receipt.setPoints(pointsCalculator.calculatePoints(receipt));
         log.info("Receipt object: " + receipt + " with points: " + receipt.getPoints());

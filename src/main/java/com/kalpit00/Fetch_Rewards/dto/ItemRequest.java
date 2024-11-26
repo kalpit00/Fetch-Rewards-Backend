@@ -1,9 +1,6 @@
 package com.kalpit00.Fetch_Rewards.dto;
 
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,12 +13,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ItemRequest {
 
-    @NotNull
     @NotBlank
+    @Pattern(regexp = "^[\\w\\s\\-]+$", message = "Short description can only contain alphanumeric characters, spaces, and hyphens.")
     private String shortDescription;
 
     @NotNull
-    @Min(0)
-    @Max(Long.MAX_VALUE)
-    private Double price;
+    @DecimalMin(value = "0.00", inclusive = false, message = "Price must be greater than 0")
+    @Pattern(regexp = "^\\d+\\.\\d{2}$", message = "Price must have exactly two decimal places")
+    private String price;
+
 }
