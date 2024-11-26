@@ -12,35 +12,34 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 
-@Entity
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Receipt {
+public class Request {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long receiptId; // Use this to uniquely identify each receipt
 
     @NotBlank
-    private String retailerName;
+    private String retailer;
     @NotNull
     private Double total;
 
     // use Embeddable for Items to create a column in receipt for each item in the collection
     @NotNull
-    @ElementCollection
-    private List<Item> items;
+    private List<ItemRequest> items;
 
     // Can also use Strings for date and time. Add data sanitation later
     @NotNull
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @DateTimeFormat(pattern = "YYYY:MM:dd")
     private LocalDate purchaseDate;
 
     @NotNull
-    @JsonFormat(pattern = "HH:mm")
+    @DateTimeFormat(pattern = "HH:mm")
     private LocalTime purchaseTime;
 }
+
