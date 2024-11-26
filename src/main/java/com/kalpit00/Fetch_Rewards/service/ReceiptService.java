@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -19,7 +20,7 @@ public class ReceiptService {
     @Autowired
     private ReceiptRepository receiptRepository;
 
-    public Long processReceipt(Request receiptRequest) {
+    public String processReceipt(Request receiptRequest) {
         Receipt receipt = Receipt.builder().
                 retailer(receiptRequest.getRetailer()).
                 total(receiptRequest.getTotal()).
@@ -36,6 +37,10 @@ public class ReceiptService {
         return receipt.getReceiptId();
     }
     public int calculatePoints(Receipt receipt) {
-        return 0;
+        return 5;
+    }
+    public Integer getReceiptPoints(String id) {
+        Optional<Receipt> receipt = receiptRepository.findById(id);
+        return receipt.map(Receipt::getPoints).orElse(null);
     }
 }

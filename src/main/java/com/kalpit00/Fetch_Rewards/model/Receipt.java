@@ -16,8 +16,8 @@ import java.util.List;
 @AllArgsConstructor
 public class Receipt {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long receiptId;
+    @GeneratedValue(strategy = GenerationType.UUID) // UUID is expected in response as a string for ids
+    private String receiptId;
     private Integer points;
     private String retailer;
     private Double total;

@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Response {
-    Long id; // For now, we are only asked to send the receipt id as response!
+    String id; // For now, we are only asked to send the receipt id as response!
     // But via this Response object, we can send entire receipt or any specific fields only
 }
