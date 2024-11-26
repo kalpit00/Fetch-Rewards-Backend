@@ -10,11 +10,13 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
-@NoArgsConstructor
 @Embeddable
 public class Item {
     private String shortDescription;
     private Double price;
+
+    public Item() {
+    }
 
     public Item(String shortDescription, Double price) {
         this.shortDescription = shortDescription;

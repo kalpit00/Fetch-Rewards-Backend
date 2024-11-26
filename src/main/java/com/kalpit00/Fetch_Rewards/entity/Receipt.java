@@ -12,7 +12,6 @@ import java.util.List;
 @Builder
 @Getter
 @Setter
-@NoArgsConstructor
 
 public class Receipt {
     @Id
@@ -34,6 +33,9 @@ public class Receipt {
         this.items = items;
         this.purchaseDate = purchaseDate;
         this.purchaseTime = purchaseTime;
+    }
+    public Receipt() {
+
     }
 
     public Receipt(String receiptId, Integer points, String retailer, Double total, List<Item> items, LocalDate purchaseDate, LocalTime purchaseTime) {
