@@ -4,10 +4,10 @@ package com.kalpit00.Fetch_Rewards.entity;
 // information like quantity, etc
 
 import jakarta.persistence.Embeddable;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+@Setter
+@Getter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor

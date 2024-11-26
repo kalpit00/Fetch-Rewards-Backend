@@ -19,6 +19,9 @@ public class ReceiptService {
     @Autowired
     private ReceiptRepository receiptRepository;
 
+    @Autowired
+    private PointsCalculator pointsCalculator;
+
     public String processReceipt(Request receiptRequest) {
         Receipt receipt = Receipt.builder().
                 retailer(receiptRequest.getRetailer()).
@@ -30,14 +33,12 @@ public class ReceiptService {
             receipt.getItems().add(Item.builder().shortDescription(itemRequest.getShortDescription()).
                     price(itemRequest.getPrice()).build());
         }
-        receipt.setPoints(calculatePoints(receipt));
+        receipt.setPoints(pointsCalculator.calculatePoints(receipt));
         log.info("Receipt object: " + receipt + " with points: " + receipt.getPoints());
         receiptRepository.save(receipt);
         return receipt.getReceiptId();
     }
-    public int calculatePoints(Receipt receipt) {
-        return 5;
-    }
+
     public Integer getReceiptPoints(String id) {
         Optional<Receipt> receipt = receiptRepository.findById(id);
         return receipt.map(Receipt::getPoints).orElse(null);
