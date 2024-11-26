@@ -1,16 +1,15 @@
 package com.kalpit00.Fetch_Rewards.service;
 
-import com.kalpit00.Fetch_Rewards.Repository.ReceiptRepository;
-import com.kalpit00.Fetch_Rewards.entity.ItemRequest;
-import com.kalpit00.Fetch_Rewards.entity.Request;
-import com.kalpit00.Fetch_Rewards.model.Item;
-import com.kalpit00.Fetch_Rewards.model.Receipt;
+import com.kalpit00.Fetch_Rewards.repository.ReceiptRepository;
+import com.kalpit00.Fetch_Rewards.dto.ItemRequest;
+import com.kalpit00.Fetch_Rewards.dto.Request;
+import com.kalpit00.Fetch_Rewards.entity.Item;
+import com.kalpit00.Fetch_Rewards.entity.Receipt;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @Slf4j

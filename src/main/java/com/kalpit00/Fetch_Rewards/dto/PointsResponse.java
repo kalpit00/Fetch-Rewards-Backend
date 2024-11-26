@@ -1,4 +1,4 @@
-package com.kalpit00.Fetch_Rewards.entity;
+package com.kalpit00.Fetch_Rewards.dto;
 
 import lombok.*;
 

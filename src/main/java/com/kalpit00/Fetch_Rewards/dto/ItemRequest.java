@@ -1,6 +1,5 @@
-package com.kalpit00.Fetch_Rewards.entity;
+package com.kalpit00.Fetch_Rewards.dto;
 
-import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;

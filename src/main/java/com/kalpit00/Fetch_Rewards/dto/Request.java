@@ -1,4 +1,4 @@
-package com.kalpit00.Fetch_Rewards.entity;
+package com.kalpit00.Fetch_Rewards.dto;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

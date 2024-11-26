@@ -1,6 +1,6 @@
-package com.kalpit00.Fetch_Rewards.Repository;
+package com.kalpit00.Fetch_Rewards.repository;
 
-import com.kalpit00.Fetch_Rewards.model.Receipt;
+import com.kalpit00.Fetch_Rewards.entity.Receipt;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

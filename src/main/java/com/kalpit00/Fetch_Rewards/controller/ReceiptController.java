@@ -1,9 +1,8 @@
 package com.kalpit00.Fetch_Rewards.controller;
 
-import com.kalpit00.Fetch_Rewards.entity.PointsResponse;
-import com.kalpit00.Fetch_Rewards.entity.Request;
-import com.kalpit00.Fetch_Rewards.entity.Response;
-import com.kalpit00.Fetch_Rewards.model.Receipt;
+import com.kalpit00.Fetch_Rewards.dto.PointsResponse;
+import com.kalpit00.Fetch_Rewards.dto.Request;
+import com.kalpit00.Fetch_Rewards.dto.Response;
 import com.kalpit00.Fetch_Rewards.service.ReceiptService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.kalpit00.Fetch_Rewards.model;
+package com.kalpit00.Fetch_Rewards.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
